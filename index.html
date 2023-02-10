@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+    <script src="form.js"></script>
 </head>
 <body>
     <form name="form" onsubmit="return myForm.validate()">
@@ -35,12 +36,28 @@
             <input name="gamesowned" id="gamesowned" type="text"/>
             <p class="errorMessage" id="gamesownedError">Require a number between 1 and 99.</p>
         </div>
+        <div>
+            <label>Favorite gaming studio ?</label>
+            <div class="radioContainer">
+                <input class="radioButton" type="radio" id="studio1" name="studios" value="Ubisoft" />
+                <label class="radioButtonLabel" for="studio1">Ubisoft</label>
+            </div>
+            <div class="radioContainer">
+                <input class="radioButton" type="radio" id="studio2" name="studios" value="Naughty Dog" />
+                <label class="radioButtonLabel" for="studio2">Naughty Dog</label>
+            </div>
+            <div class="radioContainer">
+                <input class="radioButton" type="radio" id="studio3" name="studios" value="Riot Games" />
+                <label class="radioButtonLabel" for="studio3">Riot Games</label>
+            </div>
+            <p class="errorMessage" id="studiosError">Sélectionnez un studio.</p>
+            </div>
         <div class="tos-container">
             <input class="tos-input" type="checkbox" id="tos-checkbox" checked/>
             <label class="tos-label" for="tos-checkbox" required onclick="return myForm.liveValidate('conditions')">I have read and agreed to the TOS.</label>
             <p class="errorMessage" id="conditionsError">You must accept the TOS.</p> 
         </div>
-
+        <input class="submitButton" type="submit" class="button" value="Submit" />
     </form>
     
 </body>

@@ -78,3 +78,28 @@ form input:focus-within {
 .tos-container label {
   width: 100%;
 }
+
+.radioButton {
+  width: fit-content;
+}
+
+.radioButtonLabel {
+  width: fit-content;
+}
+
+.radioContainer {
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.submitButton {
+  background-color: #6441a5;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: fit-content;
+  height: fit-content;
+}
