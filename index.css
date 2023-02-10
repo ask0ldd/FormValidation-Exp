@@ -15,7 +15,7 @@ body {
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 600;
-  color: #312b3b;
+  color: #413c4b;
 }
 
 form {
@@ -25,11 +25,11 @@ form {
   max-width: 600px;
   margin: 0 auto;
   row-gap: 2rem;
-  background-color: #d6cee6;
+  background-color: #e0d9f1;
   padding: 3rem 2rem;
   margin-top: 2rem;
   border-radius: 6px;
-  box-shadow: 0px 16px 32px #2d1c4e;
+  box-shadow: 0px 16px 32px #372658;
 }
 
 form div {
@@ -43,9 +43,38 @@ form input {
   border: 1px solid #595364;
   border-radius: 4px;
   width: 100%;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 8px;
+  color: #413c4b;
+  outline-color: #595364;
 }
+
+/*form input:focus,
+form input:focus-visible,
+form input:focus-within {
+  border-color: #595364;
+  outline-color: #595364;
+}*/
 
 .errorMessage {
   color: #ff4e60;
   font-weight: 400;
+  display: none;
+}
+
+.tos-container {
+  flex-direction: row;
+  width: fit-content;
+}
+
+.tos-container input {
+  height: 16px;
+  width: fit-content;
+  margin-right: 1rem;
+}
+
+.tos-container label {
+  width: 100%;
 }

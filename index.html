@@ -21,14 +21,24 @@
             <p class="errorMessage" id="lastnameError">Lastname should be at least 2 characters long.</p>
         </div>
         <div>
-            <label for="siblings">Number of Siblings</label>
+            <label for="email">Email</label>
+            <input name="email" id="email" type="text"/>
+            <p class="errorMessage" id="emailError">Not a valid email format.</p>
+        </div>
+        <div>
+            <label for="siblings">How many games do you own ?</label>
             <input name="siblings" id="siblings" type="text"/>
-            <p class="errorMessage" id="siblingsError">Require a number between 1 and 20.</p>
+            <p class="errorMessage" id="siblingsError">Require a number between 1 and 99.</p>
         </div>
         <div>
             <label for="birthdate">Birthdate</label>
             <input type="date" id="birthdate" name="birthdate" oninput="return myForm.liveValidate('birthdate')"/>
             <p class="errorMessage" id="birthdateError">Type a valid date.</p>
+        </div>
+        <div class="tos-container">
+            <input class="tos-input" type="checkbox" id="tos-checkbox" checked/>
+            <label class="tos-label" for="tos-checkbox" required onclick="return myForm.liveValidate('conditions')">I have read and agreed to the TOS.</label>
+            <p class="errorMessage" id="conditionsError">You must accept the TOS.</p> 
         </div>
 
     </form>
