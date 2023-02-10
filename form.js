@@ -1,18 +1,21 @@
-class errorMessageNode {
+class errorNodesGroup {
 
-    constructor(node) 
+    constructor(errMessNode, relatedInput) 
     {
-        this.node = document.querySelector(node)
+        this.node = document.querySelector(errMessNode)
+        if (relatedInput !== undefined) this.input = document.querySelector(relatedInput)
     }
 
     show() 
     { 
-        this.node.style.display="block" 
+        this.node.style.display = "block"
+        if (this.input !== undefined) this.input.style.borderColor = "red";
     }
 
     hide() 
     { 
         this.node.style.display="none"
+        if (this.input !== undefined) this.input.style.borderColor = "#595364";
     }
 
 }
@@ -33,12 +36,12 @@ class Form {
 
         // object grouping error message nodes / !! get it out of all functions
         this.errorNodes = {
-            'firstname' : new errorMessageNode('#firstnameError'), // associer input pr pouvoir l'highlighter : errorNodesHandler(errorelement, input) / const errorHandlers = {}
-            'lastname' : new errorMessageNode('#lastnameError'),
-            'birthdate' : new errorMessageNode('#birthdateError'),
-            'games' : new errorMessageNode('#gamesownedError'),
-            'studios' : new errorMessageNode('#studiosError'),
-            'conditions' : new errorMessageNode('#conditionsError')
+            'firstname' : new errorNodesGroup('#firstnameError', '#firstname'), // associer input pr pouvoir l'highlighter : errorNodesHandler(errorelement, input) / const errorHandlers = {}
+            'lastname' : new errorNodesGroup('#lastnameError', '#lastname'),
+            'birthdate' : new errorNodesGroup('#birthdateError', '#birthdate'),
+            'games' : new errorNodesGroup('#gamesownedError', '#gamesowned'),
+            'studios' : new errorNodesGroup('#studiosError'),
+            'conditions' : new errorNodesGroup('#conditionsError', '#tos-checkbox')
         }
     }
 
