@@ -13,17 +13,22 @@
         <div>
             <label for="firstname">Firstname</label>
             <input name="firstname" id="firstname" type="text"/>
-            <p class="errorMessage" id="firstnameError">error</p>
+            <p class="errorMessage" id="firstnameError">Lastname should be at least 2 characters long.</p>
         </div>
         <div>
             <label for="lastname">Lastname</label>
             <input name="lastname" id="lastname" type="text"/>
-            <p class="errorMessage" id="lastnameError">error</p>
+            <p class="errorMessage" id="lastnameError">Lastname should be at least 2 characters long.</p>
         </div>
         <div>
             <label for="siblings">Number of Siblings</label>
             <input name="siblings" id="siblings" type="text"/>
-            <p class="errorMessage" id="siblingsError">error</p>
+            <p class="errorMessage" id="siblingsError">Require a number between 1 and 20.</p>
+        </div>
+        <div>
+            <label for="birthdate">Birthdate</label>
+            <input type="date" id="birthdate" name="birthdate" oninput="return myForm.liveValidate('birthdate')"/>
+            <p class="errorMessage" id="birthdateError">Type a valid date.</p>
         </div>
 
     </form>
