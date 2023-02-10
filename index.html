@@ -5,8 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
 </head>
 <body>
+    <form name="form" onsubmit="return myForm.validate()">
+        <div>
+            <label for="firstname">Firstname</label>
+            <input name="firstname" id="firstname" type="text"/>
+            <p class="errorMessage" id="firstnameError">error</p>
+        </div>
+        <div>
+            <label for="lastname">Lastname</label>
+            <input name="lastname" id="lastname" type="text"/>
+            <p class="errorMessage" id="lastnameError">error</p>
+        </div>
+        <div>
+            <label for="siblings">Number of Siblings</label>
+            <input name="siblings" id="siblings" type="text"/>
+            <p class="errorMessage" id="siblingsError">error</p>
+        </div>
+
+    </form>
     
 </body>
 </html>
