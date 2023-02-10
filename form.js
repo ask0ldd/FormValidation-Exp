@@ -30,6 +30,16 @@ class Form {
         this.#zeroNinetyNineRegex = new RegExp ("^[0-9]{1,2}$")
         this.#dateRegex = new RegExp("^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$") // ([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
         this.#isOneValidationFalse = (element) => element === false
+
+        // object grouping error message nodes / !! get it out of all functions
+        this.errorNodes = {
+            'firstname' : new errorMessageNode('#firstnameError'), // associer input pr pouvoir l'highlighter : errorNodesHandler(errorelement, input) / const errorHandlers = {}
+            'lastname' : new errorMessageNode('#lastnameError'),
+            'birthdate' : new errorMessageNode('#birthdateError'),
+            'games' : new errorMessageNode('#gamesownedError'),
+            'studios' : new errorMessageNode('#studiosError'),
+            'conditions' : new errorMessageNode('#conditionsError')
+        }
     }
 
     #checkName(fieldId)
@@ -68,16 +78,6 @@ class Form {
     {
         console.log("validating...")
         
-        // object grouping error message nodes / !! get it out of all functions
-        const errorNodes = {
-            'firstname' : new errorMessageNode('#firstnameError'), // associer input pr pouvoir l'highlighter : errorNodesHandler(errorelement, input) / const errorHandlers = {}
-            'lastname' : new errorMessageNode('#lastnameError'),
-            'birthdate' : new errorMessageNode('#birthdateError'),
-            'games' : new errorMessageNode('#gamesownedError'),
-            'studios' : new errorMessageNode('#studiosError'),
-            'conditions' : new errorMessageNode('#conditionsError')
-        }
-
         // try validating all the inputs and save the object
         const validationResults = {
             'firstname' : this.#checkName('#firstname'),
@@ -93,7 +93,7 @@ class Form {
 
         // show error messages when input values are wrong
         for (const key in validationResults) {
-            ((validationResults[key] === false) || (validationResults[key] === undefined)) ? errorNodes[key].show() : errorNodes[key].hide()
+            ((validationResults[key] === false) || (validationResults[key] === undefined)) ? this.errorNodes[key].show() : this.errorNodes[key].hide()
         }
 
         // test if one element of validationResults = false, if so then returns false which blocks form submit
