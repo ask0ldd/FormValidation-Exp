@@ -21,19 +21,19 @@
             <p class="errorMessage" id="lastnameError">Lastname should be at least 2 characters long.</p>
         </div>
         <div>
+            <label for="birthdate">Birthdate</label>
+            <input type="date" id="birthdate" name="birthdate" oninput="return myForm.liveValidate('birthdate')"/>
+            <p class="errorMessage" id="birthdateError">Type a valid date.</p>
+        </div>
+        <div>
             <label for="email">Email</label>
             <input name="email" id="email" type="text"/>
             <p class="errorMessage" id="emailError">Not a valid email format.</p>
         </div>
         <div>
-            <label for="siblings">How many games do you own ?</label>
-            <input name="siblings" id="siblings" type="text"/>
-            <p class="errorMessage" id="siblingsError">Require a number between 1 and 99.</p>
-        </div>
-        <div>
-            <label for="birthdate">Birthdate</label>
-            <input type="date" id="birthdate" name="birthdate" oninput="return myForm.liveValidate('birthdate')"/>
-            <p class="errorMessage" id="birthdateError">Type a valid date.</p>
+            <label for="gamesowned">How many games do you own ?</label>
+            <input name="gamesowned" id="gamesowned" type="text"/>
+            <p class="errorMessage" id="gamesownedError">Require a number between 1 and 99.</p>
         </div>
         <div class="tos-container">
             <input class="tos-input" type="checkbox" id="tos-checkbox" checked/>
