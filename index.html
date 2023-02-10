@@ -22,7 +22,7 @@
         </div>
         <div>
             <label for="birthdate">Birthdate</label>
-            <input type="date" id="birthdate" name="birthdate" oninput="return myForm.liveValidate('birthdate')"/>
+            <input type="date" id="birthdate" name="birthdate" onblur="return myForm.liveValidate('birthdate')"/>
             <p class="errorMessage" id="birthdateError">Type a valid date.</p>
         </div>
         <div>
@@ -33,20 +33,20 @@
         <div>
             <label for="gamesowned">How many games do you own ?</label>
             <input name="gamesowned" id="gamesowned" type="text" oninput="return myForm.liveValidate('games')"/>
-            <p class="errorMessage" id="gamesownedError">Require a number between 1 and 99.</p>
+            <p class="errorMessage" id="gamesownedError">Require a number between 0 and 99.</p>
         </div>
         <div>
-            <label>Favorite gaming studio ?</label>
+            <label>Your favorite gaming studio ?</label>
             <div class="radioContainer">
-                <input class="radioButton" type="radio" id="studio1" name="studios" value="Ubisoft" />
+                <input class="radioButton" type="radio" id="studio1" name="studios" value="Ubisoft" onclick="return myForm.liveValidate('studios')"/>
                 <label class="radioButtonLabel" for="studio1">Ubisoft</label>
             </div>
             <div class="radioContainer">
-                <input class="radioButton" type="radio" id="studio2" name="studios" value="Naughty Dog" />
+                <input class="radioButton" type="radio" id="studio2" name="studios" value="Naughty Dog" onclick="return myForm.liveValidate('studios')"/>
                 <label class="radioButtonLabel" for="studio2">Naughty Dog</label>
             </div>
             <div class="radioContainer">
-                <input class="radioButton" type="radio" id="studio3" name="studios" value="Riot Games" />
+                <input class="radioButton" type="radio" id="studio3" name="studios" value="Riot Games" onclick="return myForm.liveValidate('studios')" />
                 <label class="radioButtonLabel" for="studio3">Riot Games</label>
             </div>
             <p class="errorMessage" id="studiosError">Sélectionnez un studio.</p>

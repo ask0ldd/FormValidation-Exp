@@ -31,7 +31,7 @@ class Form {
     {
         this.#nameRegex = new RegExp ("^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,}$")
         this.#zeroNinetyNineRegex = new RegExp ("^[0-9]{1,2}$")
-        this.#dateRegex = new RegExp("^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$") // ([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+        this.#dateRegex = new RegExp("^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$") // ([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])) // ^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$
         this.#isOneValidationFalse = (element) => element === false
 
         // object grouping error message nodes / !! get it out of all functions
@@ -54,7 +54,7 @@ class Form {
     #checkDate(fieldId)
     {
         const fieldValue = document.querySelector(fieldId).value.trim()
-        // check day < 32 / month < 13 / < todays date / > 1850 / date < today
+        // check day < 32 / month < 13 / < todays date / > 1850 / date < today // format y d m
         return this.#dateRegex.test(fieldValue)
     }
 
@@ -64,7 +64,7 @@ class Form {
         return this.#zeroNinetyNineRegex.test(fieldValue)
     }
 
-    #checkLocations(fieldsName)
+    #checkStudios(fieldsName)
     {
         const fieldsStatus = document.getElementsByName(fieldsName)
 
@@ -85,7 +85,7 @@ class Form {
             'lastname' : () => this.#checkName('#lastname'),
             'birthdate' : () => this.#checkDate('#birthdate'),
             'games' : () => this.#checkNumber('#gamesowned'), // min max quantity ?
-            'studios' : () => this.#checkLocations('studios'),
+            'studios' : () => this.#checkStudios('studios'),
             'conditions' : () => document.querySelector('#tos-checkbox').checked
         }
 
@@ -102,7 +102,7 @@ class Form {
             'lastname' : this.#checkName('#lastname'),
             'birthdate' : this.#checkDate('#birthdate'),
             'games' : this.#checkNumber('#gamesowned'), // min max quantity ?
-            'studios' : this.#checkLocations('studios'),
+            'studios' : this.#checkStudios('studios'),
             'conditions' : document.querySelector('#tos-checkbox').checked
         }
 
