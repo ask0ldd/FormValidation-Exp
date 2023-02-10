@@ -12,12 +12,12 @@
     <form name="form" onsubmit="return myForm.validate()">
         <div>
             <label for="firstname">Firstname</label>
-            <input name="firstname" id="firstname" type="text"/>
+            <input name="firstname" id="firstname" type="text" oninput="return myForm.liveValidate('firstname')"/>
             <p class="errorMessage" id="firstnameError">Lastname should be at least 2 characters long.</p>
         </div>
         <div>
             <label for="lastname">Lastname</label>
-            <input name="lastname" id="lastname" type="text"/>
+            <input name="lastname" id="lastname" type="text" oninput="return myForm.liveValidate('lastname')"/>
             <p class="errorMessage" id="lastnameError">Lastname should be at least 2 characters long.</p>
         </div>
         <div>
@@ -32,7 +32,7 @@
         </div>
         <div>
             <label for="gamesowned">How many games do you own ?</label>
-            <input name="gamesowned" id="gamesowned" type="text"/>
+            <input name="gamesowned" id="gamesowned" type="text" oninput="return myForm.liveValidate('games')"/>
             <p class="errorMessage" id="gamesownedError">Require a number between 1 and 99.</p>
         </div>
         <div>
@@ -52,8 +52,8 @@
             <p class="errorMessage" id="studiosError">Sélectionnez un studio.</p>
             </div>
         <div class="tos-container">
-            <input class="tos-input" type="checkbox" id="tos-checkbox" checked/>
-            <label class="tos-label" for="tos-checkbox" required onclick="return myForm.liveValidate('conditions')">I have read and agreed to the TOS.</label>
+            <input class="tos-input" type="checkbox" id="tos-checkbox" onclick="return myForm.liveValidate('conditions')" checked/>
+            <label class="tos-label" for="tos-checkbox">I have read and agreed to the TOS.</label>
             <p class="errorMessage" id="conditionsError">You must accept the TOS.</p> 
         </div>
         <input class="submitButton" type="submit" class="button" value="Submit" />

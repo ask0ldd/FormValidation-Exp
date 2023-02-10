@@ -77,6 +77,21 @@ class Form {
         return false
     }
 
+    liveValidate(input)
+    {      
+        // transform validation result into function executed on demand
+        const getValidationResult = {
+            'firstname' : () => this.#checkName('#firstname'),
+            'lastname' : () => this.#checkName('#lastname'),
+            'birthdate' : () => this.#checkDate('#birthdate'),
+            'games' : () => this.#checkNumber('#gamesowned'), // min max quantity ?
+            'studios' : () => this.#checkLocations('studios'),
+            'conditions' : () => document.querySelector('#tos-checkbox').checked
+        }
+
+        getValidationResult[input]() === false ? this.errorNodes[input].show() : this.errorNodes[input].hide()
+    }
+
     validate()
     {
         console.log("validating...")
