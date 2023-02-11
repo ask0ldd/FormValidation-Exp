@@ -51,10 +51,12 @@
             </div>
             <p class="errorMessage" id="studiosError">Sélectionnez un studio.</p>
             </div>
-        <div class="tos-container">
-            <input class="tos-input" type="checkbox" id="tos-checkbox" onclick="return myForm.liveValidate('conditions')" checked/>
-            <label class="tos-label" for="tos-checkbox">I have read and agreed to the TOS.</label>
-            <p class="errorMessage" id="conditionsError">You must accept the TOS.</p> 
+        <div>
+            <div class="tos-container">
+                <input class="tos-input" type="checkbox" id="tos-checkbox" onclick="return myForm.liveValidate('conditions')" checked/>
+                <label class="tos-label" for="tos-checkbox">I have read and agreed to the TOS.</label> 
+            </div>
+            <p class="errorMessage" id="conditionsError">You must accept the TOS.</p>
         </div>
         <input class="submitButton" type="submit" class="button" value="Submit" />
     </form>
