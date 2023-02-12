@@ -23,6 +23,7 @@ class errorNodesGroup {
 // class Form
 class Form {
     #nameRegex
+    #emailRegex
     #zeroNinetyNineRegex
     #dateRegex
     #isOneValidationFalse
@@ -31,6 +32,7 @@ class Form {
     {
         this.#nameRegex = new RegExp ("^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,}$")
         this.#zeroNinetyNineRegex = new RegExp ("^[0-9]{1,2}$")
+        this.#emailRegex = new RegExp("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$")
         this.#dateRegex = new RegExp("^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$") // ([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])) // ^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$
         this.#isOneValidationFalse = (element) => element === false
 
